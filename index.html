@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Energie_Bat</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">⚡</div>
+      <div class="titles">
+        <div class="kicker">Hérault Énergie • Chef de projet : Frédéric Lamur</div>
+        <h1>Diagnostic énergétique des bâtiments</h1>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn" id="openBilans">Bilans communaux</button>
+      <div class="pill" id="zoomPill">Zoom : —</div>
+    </div>
+  </header>
+
+  <div id="map"></div>
+
+  <div class="legend">
+    <div class="legend-title">Lecture</div>
+    <div class="legend-row"><span class="dot"></span> Bâtiment diagnostiqué</div>
+    <div class="legend-row subtle">Clique sur un point pour ouvrir la fiche</div>
+  </div>
+
+  <!-- Drawer bilans -->
+  <div class="drawer" id="drawer">
+    <div class="drawer-card">
+      <div class="drawer-head">
+        <div>
+          <div class="drawer-kicker">Bilans communaux</div>
+          <div class="drawer-title">Sélectionne une commune</div>
+        </div>
+        <button class="iconbtn" id="closeDrawer">✕</button>
+      </div>
+
+      <div class="drawer-body">
+        <div class="list" id="bilansList"></div>
+
+        <div class="pdfview">
+          <div class="pdfhead">
+            <div class="pdftitle" id="pdfTitle">Aucun bilan ouvert</div>
+            <a class="btn ghost" id="openNewTab" target="_blank" style="display:none;">Ouvrir dans un nouvel onglet</a>
+          </div>
+          <iframe id="pdfFrame" title="Bilan communal" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="backdrop" id="backdrop"></div>
+  </div>
+</div>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js'></script><script  src="./script.js"></script>
+
+  </body>
+  
+</html>
